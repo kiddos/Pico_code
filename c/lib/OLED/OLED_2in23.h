@@ -1,6 +1,6 @@
 /*****************************************************************************
 * | File        :   OLED_1in3_c.h
-* | Author      :   
+* | Author      :
 * | Function    :   1.3inch OLEDDrive function
 * | Info        :
 *----------------
@@ -28,41 +28,38 @@
 # THE SOFTWARE.
 ******************************************************************************/
 #ifndef __OLED_2IN23_C_H
-#define __OLED_2IN23_C_H		
+#define __OLED_2IN23_C_H
 
 #include "DEV_Config.h"
 
 /********************************************************************************
-function:	
-		Define the full screen height length of the display
+function:
+                Define the full screen height length of the display
 ********************************************************************************/
 #define USE_SPI 1
 #define USE_IIC 0
 
-#define IIC_CMD        0X00
-#define IIC_RAM        0X40
+#define IIC_CMD 0X00
+#define IIC_RAM 0X40
 
+#define OLED_2in23_WIDTH 128  // OLED width
+#define OLED_2in23_HEIGHT 32  // OLED height
 
-#define OLED_2in23_WIDTH  128//OLED width
-#define OLED_2in23_HEIGHT 32 //OLED height
+#define OLED_CS_0 DEV_Digital_Write(EPD_CS_PIN, 0)
+#define OLED_CS_1 DEV_Digital_Write(EPD_CS_PIN, 1)
 
-#define OLED_CS_0      DEV_Digital_Write(EPD_CS_PIN,0)
-#define OLED_CS_1      DEV_Digital_Write(EPD_CS_PIN,1)
+#define OLED_RST_0 DEV_Digital_Write(EPD_RST_PIN, 0)
+#define OLED_RST_1 DEV_Digital_Write(EPD_RST_PIN, 1)
 
-#define OLED_RST_0      DEV_Digital_Write(EPD_RST_PIN,0)
-#define OLED_RST_1      DEV_Digital_Write(EPD_RST_PIN,1)
-
-#define OLED_DC_0       DEV_Digital_Write(EPD_DC_PIN,0)
-#define OLED_DC_1       DEV_Digital_Write(EPD_DC_PIN,1)
-
-
+#define OLED_DC_0 DEV_Digital_Write(EPD_DC_PIN, 0)
+#define OLED_DC_1 DEV_Digital_Write(EPD_DC_PIN, 1)
 
 void OLED_2in23_Init(void);
 void OLED_2in23_Clear(uint8_t chFill);
 void OLED_2in23_draw_point(uint8_t chXpos, uint8_t chYpos, uint8_t chPoint);
-void OLED_2in23_draw_bitmap(unsigned char x,unsigned char y,const unsigned char *pBmp, 
-					unsigned char chWidth,unsigned char chHeight);
+void OLED_2in23_draw_bitmap(unsigned char x, unsigned char y,
+                            const unsigned char* pBmp, unsigned char chWidth,
+                            unsigned char chHeight);
 void OLED_2in23_refresh_gram(void);
 
-#endif  
-	 
+#endif

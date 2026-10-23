@@ -1,12 +1,11 @@
 #ifndef __ICM20948__H
 #define __ICM20948__H
-#include <stdio.h>
 #include <math.h>
-
+#include <stdio.h>
 
 #include "DEV_Config.h"
 
-//typedef uint8_t bool;
+// typedef uint8_t bool;
 #define true 1
 #define false 0
 /* define ICM-20948 Device I2C address*/
@@ -27,7 +26,7 @@
 #define REG_VAL_BIT_DIAMOND_DMP_RST 0x04
 #define REG_ADD_PWR_MIGMT_1 0x06
 #define REG_VAL_ALL_RGE_RESET 0x80
-#define REG_VAL_RUN_MODE 0x01 //Non low-power mode
+#define REG_VAL_RUN_MODE 0x01  // Non low-power mode
 #define REG_ADD_LP_CONFIG 0x05
 #define REG_ADD_PWR_MGMT_1 0x06
 #define REG_ADD_PWR_MGMT_2 0x07
@@ -104,50 +103,45 @@
 #define REG_VAL_MAG_MODE_ST 0x10
 /* define ICM-20948 MAG Register  end */
 
-#define MAG_DATA_LEN    6
+#define MAG_DATA_LEN 6
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-	typedef enum 
-	{  
-		  IMU_EN_SENSOR_TYPE_NULL = 0,
-		  IMU_EN_SENSOR_TYPE_ICM20948,
-		  IMU_EN_SENSOR_TYPE_MAX
-	}IMU_EN_SENSOR_TYPE;
+typedef enum {
+  IMU_EN_SENSOR_TYPE_NULL = 0,
+  IMU_EN_SENSOR_TYPE_ICM20948,
+  IMU_EN_SENSOR_TYPE_MAX
+} IMU_EN_SENSOR_TYPE;
 
-	typedef struct imu_st_angles_data_tag
-	{
-		  float fYaw;
-		  float fPitch;
-		  float fRoll;
-	}IMU_ST_ANGLES_DATA;
+typedef struct imu_st_angles_data_tag {
+  float fYaw;
+  float fPitch;
+  float fRoll;
+} IMU_ST_ANGLES_DATA;
 
-	typedef struct imu_st_sensor_data_tag
-	{
-		  int16_t s16X;
-		  int16_t s16Y;
-		  int16_t s16Z;
-	}IMU_ST_SENSOR_DATA;
+typedef struct imu_st_sensor_data_tag {
+  int16_t s16X;
+  int16_t s16Y;
+  int16_t s16Z;
+} IMU_ST_SENSOR_DATA;
 
-	typedef struct icm20948_st_avg_data_tag
-	{
-	  uint8_t u8Index;
-		int16_t s16AvgBuffer[8];
-	}ICM20948_ST_AVG_DATA;
+typedef struct icm20948_st_avg_data_tag {
+  uint8_t u8Index;
+  int16_t s16AvgBuffer[8];
+} ICM20948_ST_AVG_DATA;
 
-	void imuInit(IMU_EN_SENSOR_TYPE *penMotionSensorType);
-	void imuDataGet(IMU_ST_ANGLES_DATA *pstAngles, 
-					IMU_ST_SENSOR_DATA *pstGyroRawData,
-					IMU_ST_SENSOR_DATA *pstAccelRawData,
-					IMU_ST_SENSOR_DATA *pstMagnRawData); 
-	char I2C_ReadOneByte(char reg);
-	void I2C_WriteOneByte(char reg, char val);
+void imuInit(IMU_EN_SENSOR_TYPE* penMotionSensorType);
+void imuDataGet(IMU_ST_ANGLES_DATA* pstAngles,
+                IMU_ST_SENSOR_DATA* pstGyroRawData,
+                IMU_ST_SENSOR_DATA* pstAccelRawData,
+                IMU_ST_SENSOR_DATA* pstMagnRawData);
+char I2C_ReadOneByte(char reg);
+void I2C_WriteOneByte(char reg, char val);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif 
-	
+#endif

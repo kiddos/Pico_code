@@ -1,12 +1,12 @@
 /*****************************************************************************
 * | File        :   ImageData.h
-* | Author      :  
+* | Author      :
 * | Function    :   test Demo
 * | Info        :
 *----------------
 * |	This version:   V1.0
 * | Date        :   2021-03-16
-* | Info        :   
+* | Info        :
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documnetation files (the "Software"), to deal
@@ -35,7 +35,7 @@ extern const unsigned char Msg816[];
 extern const unsigned char Bat816[];
 extern const unsigned char Bluetooth88[];
 extern const unsigned char GPRS88[];
-extern const unsigned char Alarm88[]; 
+extern const unsigned char Alarm88[];
 
 extern const unsigned char gImage_0inch96_1[];
 extern const unsigned char gImage_1inch14_1[];
@@ -46,5 +46,3 @@ extern const unsigned char gImage_1inch3_1[];
 extern const unsigned char gImage_2inch_1[];
 #endif
 /* FILE END */
-
-

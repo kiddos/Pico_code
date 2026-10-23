@@ -1,12 +1,12 @@
 /*****************************************************************************
 * | File        :   EPD_Test.h
-* | Author      :  
+* | Author      :
 * | Function    :   test Demo
 * | Info        :
 *----------------
 * |	This version:   V1.0
 * | Date        :   2021-03-16
-* | Info        :   
+* | Info        :
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documnetation files (the "Software"), to deal
@@ -30,16 +30,16 @@
 #ifndef _EPD_TEST_H_
 #define _EPD_TEST_H_
 
+#include <stdlib.h>  // malloc() free()
+
 #include "DEV_Config.h"
+#include "Debug.h"
 #include "GUI_Paint.h"
 #include "ImageData.h"
-#include "Debug.h"
-#include <stdlib.h> // malloc() free()
-
 #include "Infrared.h"
 
 int OLED_1in3_C_test(void);
-int OLED_2in23_test(void); 
+int OLED_2in23_test(void);
 
 int LCD_0in96_test(void);
 int LCD_1in14_test(void);
