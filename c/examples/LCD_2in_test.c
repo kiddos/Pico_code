@@ -27,7 +27,7 @@
 # THE SOFTWARE.
 #
 ******************************************************************************/
-#include "LCD_2IN.h"
+#include "LCD_2in.h"
 
 #include "EPD_Test.h"
 
